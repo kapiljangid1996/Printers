@@ -1,7 +1,7 @@
 <header class="header_section">
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-			<a class="navbar-brand" href="{{url('/')}}"><span>Title</span></a>
+			<a class="navbar-brand" href="{{url('/')}}"><img src="/Uploads/Site/{{$settings->logo}}" alt="" style="width: 150px"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -22,7 +22,7 @@
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="">Service</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{url('/service')}}">Service</a></li>
 						<li class="nav-item"><a class="nav-link" href="">Blog</a></li>
 						<li class="nav-item"><a class="nav-link" href="">Contact</a></li>
 					</ul>

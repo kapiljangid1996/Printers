@@ -44,7 +44,7 @@
 			</div>				
 		</div>
 		<div class="btn-box">
-			<a href="">Read More</a>
+			<a href="{{url('/service')}}">Read More</a>
 		</div>
 	</div>
 </section>

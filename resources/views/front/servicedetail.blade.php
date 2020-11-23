@@ -1,0 +1,35 @@
+@extends('layouts.front')
+
+@section('title')
+
+@foreach($services as $service)
+	{{ $service->title }}
+@endforeach
+
+@stop
+
+@section('content')
+<section class="agency_section service_section layout_padding2-top">
+	<div class="container" style="width: 200%%">
+		<div class="row">
+			<div class="col-md-6">
+				@foreach($services as $key => $service)
+					<img src="/Uploads/Service/{{ $service->image }}" alt="" style="padding: 20px">
+				@endforeach
+			</div>
+			<div class="col-md-6">
+				<div class="box ">
+					<div class="detail-box">
+						@foreach($services as $key => $service)
+						<div class="heading_container">
+							<h2>{{ $service->title }}</h2>
+						</div>
+						<p>{!! $service->long_description !!}</p>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+@stop
