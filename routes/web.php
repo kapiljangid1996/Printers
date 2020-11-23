@@ -64,4 +64,7 @@ Route::prefix('admin')->group(function (){
 	//Site Setting
 	Route::get('/setting', [App\Http\Controllers\Admin\SettingsController::class, 'index']);	
 	Route::post('/setting/{id}', [App\Http\Controllers\Admin\SettingsController::class, 'update']);		
+
+	//Service
+	Route::resource('service', App\Http\Controllers\Admin\ServicesController::class);	
 });

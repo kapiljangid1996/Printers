@@ -39,6 +39,13 @@
 
 		<!-- Slider End -->
 	</div>
+
+	<!-- Content -->
+
+	@yield('content')
+
+	<!-- Content End -->
+
 	<!-- footer -->
 
 	@include('pages.footer')
