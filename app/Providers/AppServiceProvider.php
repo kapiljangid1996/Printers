@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use App\Models\Category;
 use App\Models\Slider;
 use App\Models\Service;
 use App\Models\Setting;
@@ -29,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //Category
+        $categories = Category::with('children')->whereNull('parent_id')->get();
+        View::share('categories', $categories);
+        
         //Slider on Index Page
         View::composer('pages.slider', function($view)
         {

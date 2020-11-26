@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/category/{slug}', [App\Http\Controllers\HomeController::class, 'productList']);
 Route::get('/service', [App\Http\Controllers\HomeController::class, 'service']);
 Route::get('/service/{slug}', [App\Http\Controllers\HomeController::class, 'serviceDetails']);
 

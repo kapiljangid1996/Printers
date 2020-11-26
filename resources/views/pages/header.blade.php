@@ -13,11 +13,21 @@
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class="fas fa-angle-down"></i></a>
 							<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-1 px-1" aria-labelledby="navbarDropdownMenuLink2">
 								<div class="row">
-									<div class="col-md-12 col-xl-4 sub-menu" style="padding: 15px; width: 700px">
+									@foreach ($categories as $category)
+									<div class="col-md-12 col-xl-3 sub-menu" style="padding: 10px; width: 800px">
 										<ul class="list-unstyled">
-											<li><a class="dropdown-item one" href="">About</a></li>
+											<li><a class="dropdown-item noHover">{{$category->name}}</a></li>
+											<div class="dropdown-divider"></div>
+											@if($category->children)
+												@foreach ($category->children as $child)
+													<li>
+														<a class="dropdown-item one" style="text-transform: uppercase;" href="{{url('/category/'.$child->slug)}}">{{ $child->name }}</a>
+													</li>
+												@endforeach
+											@endif
 										</ul>
 									</div>
+									@endforeach
 								</div>
 							</div>
 						</li>
@@ -34,3 +44,10 @@
 		</nav>
 	</div>
 </header>
+
+<style>
+	.noHover{
+    	pointer-events: none;
+	}
+	a.one:hover {color:#ff0000;background-color: white}
+</style>
