@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Service')
+@section('title','Blogs')
 
 @section('breadcrumb')
 <div class="row align-items-center mb-2">
@@ -8,7 +8,7 @@
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="{{url('/admin')}}">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="product">Service</li>
+				<li class="breadcrumb-item active" aria-current="product">Blogs</li>
 			</ol>
 		</nav>
 	</div>
@@ -20,13 +20,13 @@
 	<div class="col-md-12 my-4">
 		<div class="card shadow">
 			<div class="card-header">
-				<strong class="card-title">Service</strong>
+				<strong class="card-title">Blogs</strong>
 			</div>
 			<div class="card-body">
 				<div class="toolbar">
 					<div class="row">
 						<div class="col-sm-6">
-							<a href="{{route('service.create')}}" class="btn btn-primary btn-round">Add</a>
+							<a href="{{route('blog.create')}}" class="btn btn-primary btn-round">Add</a>
 						</div>
 						<div class="col-sm-6">
 							<div class="dataTables_filter">
@@ -53,16 +53,16 @@
 					<tbody id="myTable">
 						<?php
 							$index = 0;	
-							foreach ($services as $service){
+							foreach ($blogs as $blog){
 								$index++;
 						?>
 						<tr>
 							<td><?php echo $index; ?></td>
-							<td>{{ $service->title }}</td>
-							<td>{{ $service->slug }}</td>
-							<td><img src="/Uploads/Service/{{ $service->image }}" width="75px"></td>
+							<td>{{ $blog->title }}</td>
+							<td>{{ $blog->slug }}</td>
+							<td><img src="/Uploads/Blogs/{{ $blog->image }}" width="75px"></td>
 							<td>
-								@if($service->status == 1)
+								@if($blog->status == 1)
                                   	Active
                               	@else
                                   	Inactive
@@ -71,8 +71,8 @@
 							<td>
 								<button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="text-muted sr-only">Action</span></button>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="{{route('service.edit', $service->id)}}">Edit</a>
-									<form action="{{ url('/admin/service', $service->id) }}" method="POST">
+									<a class="dropdown-item" href="{{route('blog.edit', $blog->id)}}">Edit</a>
+									<form action="{{ url('/admin/blog', $blog->id) }}" method="POST">
 										@csrf
 	                      				@method('DELETE')
 										<button class="dropdown-item" type="submit" onclick="return confirm('Are you sure you want to delete')">Delete</button>
