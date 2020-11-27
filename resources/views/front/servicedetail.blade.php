@@ -10,7 +10,7 @@
 
 @section('content')
 <section class="agency_section service_section layout_padding2-top">
-	<div class="container" style="width: 200%%">
+	<div class="container" style="width: 200%; margin-bottom: 35px">
 		<div class="row">
 			<div class="col-md-6">
 				@foreach($services as $key => $service)

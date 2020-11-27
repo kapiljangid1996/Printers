@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/category/{slug}', [App\Http\Controllers\HomeController::class, 'productList']);
+Route::get('/category/{slug}', [App\Http\Controllers\HomeController::class, 'product']);
+Route::get('/products/{slug}', [App\Http\Controllers\HomeController::class, 'productDetail']);
 Route::get('/service', [App\Http\Controllers\HomeController::class, 'service']);
 Route::get('/service/{slug}', [App\Http\Controllers\HomeController::class, 'serviceDetails']);
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about']);
+Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog']);
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact']);
 
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
