@@ -8,23 +8,22 @@
 		<div class="heading_container">
 			<h2>B<span>log</span>s</h2>
 		</div>
-	</div>
-	<div class="container pb50">
 		<div class="row">
-			<div class="col-md-9 mb40">
-				@foreach($blogs as $blog)
-					<article>
-						<img src="/Uploads/Blogs/{{ $blog->image }}" alt="" class="img-fluid mb30">
-                		<div class="post-content">
-                			<h3>{{ $blog->title }}</h3>
-                            <ul class="post-meta list-inline">
-                                <li class="list-inline-item"><i class="fa fa-user-circle-o"></i><a href=""></a></li>
-                                <li class="list-inline-item"><i class="fa fa-calendar-o"></i><a href="">{{ \Carbon\Carbon::parse($blog->created_st)->format('d F, Y')}}</a></li>
-                            </ul>
-                            <p>{!! $blog->long_description !!}</p>
-                		</div>
-					</article><hr>
-				@endforeach
+			<div class="col-md-9">
+			@foreach($blogs as $blog)
+				<div class="">
+					<img src="/Uploads/Blogs/{{ $blog->image }}" alt="" class="img-fluid mb30">
+            		<div class="post-content detail-box">
+            			<h3>{{ $blog->title }}</h3>
+                        <ul class="post-meta list-inline">
+                            <li class="list-inline-item"><i class="fa fa-user-circle-o"></i><a href="">{{ $blog->editor }}</a></li>
+                            <li class="list-inline-item"><i class="fa fa-calendar-o"></i><a href="">{{ \Carbon\Carbon::parse($blog->created_st)->format('d F, Y')}}</a></li>
+                        </ul>
+                        <p>{!! $blog->long_description !!}</p>
+            		</div>
+				</div>
+				<hr class="mb30">
+			@endforeach
 			</div>
 		</div>
 	</div>

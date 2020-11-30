@@ -49,5 +49,5 @@
 	.noHover{
     	pointer-events: none;
 	}
-	a.one:hover {color:#ff0000;background-color: white}
+	a.one:hover {color:#ff0000; background-color: white}
 </style>
