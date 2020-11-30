@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\Category;
 use App\Models\Slider;
 use App\Models\Service;
+use App\Models\Blog;
 use App\Models\Setting;
 
 Use View;
@@ -44,6 +45,13 @@ class AppServiceProvider extends ServiceProvider
         //Service on Index Page
         $services = Service::all();
         View::share('services', $services);
+
+        //Blogs on Blog Page
+        View::composer('front.blog', function($view)
+        {
+            $blogs = Blog::all();
+            $view->with('blogs', $blogs);
+        });
 
         //Site Settings
         $settings = Setting::first();

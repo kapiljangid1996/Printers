@@ -11,13 +11,14 @@ class Blog extends Model
 
     protected $table = 'blogs';
 
-    protected $fillable = ['title','slug','long_description', 'short_description', 'image', 'meta_name', 'meta_keyword', 'meta_description', 'sort_order', 'status'];
+    protected $fillable = ['title','slug','editor','long_description', 'short_description', 'image', 'meta_name', 'meta_keyword', 'meta_description', 'sort_order', 'status'];
 
     public static function storeBlog($request)
     {
         $request->validate([
             'title'  => 'required|min:2|max:255|string',
             'slug'  => 'required|min:2|unique:blogs,slug',
+            'editor'  => 'required|min:2|max:255|string',
             'long_description'  => 'required|min:3',
             'short_description'  => 'required|min:3',
             'image'  => 'sometimes|nullable',
@@ -30,6 +31,7 @@ class Blog extends Model
         $blogs = new Blog(); 
         $blogs -> title = request('title');
         $blogs -> slug = request('slug');
+        $blogs -> editor = request('editor');
         $blogs -> long_description = request('long_description');
         $blogs -> short_description = request('short_description');
         $blogs -> meta_name = request('meta_name');
@@ -50,6 +52,7 @@ class Blog extends Model
         $request->validate([
             'title'  => 'required|min:2|max:255|string',
             'slug'  => 'required|min:2',
+            'editor'  => 'required|min:2|max:255|string',
             'long_description'  => 'required|min:3',
             'short_description'  => 'required|min:3',
             'image'  => 'sometimes|nullable',
@@ -62,6 +65,7 @@ class Blog extends Model
         $blogs = Blog::find($id);
         $blogs -> title = $request->input('title');
         $blogs -> slug = $request->input('slug');
+        $blogs -> editor = $request->input('editor');
         $blogs -> long_description = $request->input('long_description');
         $blogs -> short_description = $request->input('short_description');
         $blogs -> meta_name = $request->input('meta_name');

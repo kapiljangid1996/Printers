@@ -10,7 +10,7 @@
 					<ul class="navbar-nav">
 						<li class="nav-item active"><a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a></li>
 						<li class="nav-item dropdown mega-dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class="fas fa-angle-down"></i></a>
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class=""></i></a>
 							<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-1 px-1" aria-labelledby="navbarDropdownMenuLink2">
 								<div class="row">
 									@foreach ($categories as $category)

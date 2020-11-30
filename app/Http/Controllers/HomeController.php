@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
-use App\Models\Category;
 use App\Models\Service;
+use App\Models\Blog;
 
 class HomeController extends Controller
 {

@@ -49,6 +49,12 @@
 				</a>
 			</li>
 			<li class="nav-item w-100">
+				<a class="nav-link" href="{{url('/admin/blog')}}">
+					<i class="fe fe-message-square fe-16"></i>
+					<span class="ml-3 item-text">Blogs</span>
+				</a>
+			</li>
+			<li class="nav-item w-100">
 				<a class="nav-link" href="{{url('/admin/setting')}}">
 					<i class="fe fe-settings fe-16"></i>
 					<span class="ml-3 item-text">Settings</span>

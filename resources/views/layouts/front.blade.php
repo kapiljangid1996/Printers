@@ -21,6 +21,9 @@
 
 	<!-- Custom styles for this template -->
 	<link href="{{asset('FrontDesign/css/style.css')}}" rel="stylesheet" />
+	<link href="{{asset('FrontDesign/css/extra.css')}}" rel="stylesheet" />
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- responsive style -->
 	<link href="{{asset('FrontDesign/css/responsive.css')}}" rel="stylesheet" />

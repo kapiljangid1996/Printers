@@ -66,12 +66,15 @@ Route::prefix('admin')->group(function (){
 	Route::resource('product', App\Http\Controllers\Admin\ProductsController::class);
 
 	//Slider
-	Route::resource('slider', App\Http\Controllers\Admin\SlidersController::class);	
+	Route::resource('slider', App\Http\Controllers\Admin\SlidersController::class);		
+
+	//Service
+	Route::resource('service', App\Http\Controllers\Admin\ServicesController::class);			
+
+	//Blogs
+	Route::resource('blog', App\Http\Controllers\Admin\BlogsController::class);		
 
 	//Site Setting
 	Route::get('/setting', [App\Http\Controllers\Admin\SettingsController::class, 'index']);	
-	Route::post('/setting/{id}', [App\Http\Controllers\Admin\SettingsController::class, 'update']);		
-
-	//Service
-	Route::resource('service', App\Http\Controllers\Admin\ServicesController::class);	
+	Route::post('/setting/{id}', [App\Http\Controllers\Admin\SettingsController::class, 'update']);
 });

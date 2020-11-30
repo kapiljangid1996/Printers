@@ -42,6 +42,13 @@
 						</div>
 					</div>
 					<div class="form-group row">
+						<label for="editor" class="col-sm-2 col-form-label">Editor Slug</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="editor" value="{{$blogs->editor}}">
+							{!! $errors->first('editor', '<small class="text-danger">:message</small>') !!}
+						</div>
+					</div>
+					<div class="form-group row">
 						<label for="slug" class="col-sm-2 col-form-label">Description</label>
 						<div class="col-sm-10">
 							<textarea class="form-control" name="long_description" required>{{$blogs->long_description}}</textarea>

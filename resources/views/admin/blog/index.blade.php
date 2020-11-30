@@ -45,6 +45,7 @@
 							<th>#</th>
 							<th>Title</th>
 							<th>Slug</th>
+							<th>Editor Name</th>
 							<th>Image</th>
 							<th>Status</th>
 							<th>Action</th>
@@ -60,6 +61,7 @@
 							<td><?php echo $index; ?></td>
 							<td>{{ $blog->title }}</td>
 							<td>{{ $blog->slug }}</td>
+							<td>{{ $blog->editor }}</td>
 							<td><img src="/Uploads/Blogs/{{ $blog->image }}" width="75px"></td>
 							<td>
 								@if($blog->status == 1)
