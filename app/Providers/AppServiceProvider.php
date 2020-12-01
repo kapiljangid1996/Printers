@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
         //Products on Index Page
         View::composer('front.index', function($view)
         {
-            $products = Product::where('featured',1)->where('status',1)->orderBy('id', 'desc')->get();;
+            $products = Product::where('featured',1)->where('status',1)->orderBy('id', 'desc')->take(8)->get();;
             $view->with('products', $products);
         });
         

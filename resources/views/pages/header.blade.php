@@ -16,12 +16,12 @@
 									<div class="row">
 										@foreach ($categories as $key => $category)
 											<div class="col-md-12 col-lg-3 {{$key == 3 ? 'styleMargin' : '' }}">
-												<ul class="{{$key == 3 ? 'styleMargin' : '' }}">
-													<li class="dropdown-header">{{$category->name}}</li>
+												<ul class="{{$key == 3 ? 'styleMargin' : '' }}" style="padding-left: 2px; margin-left: 0px">
+													<li class="dropdown-header font-weight-bold fontSize" style="padding-left: 5px">{{$category->name}}</li>
 													@if($category->children)
 														@foreach ($category->children as $child)
-															<li class="dropdown-header">
-																<a class="one" href="{{url('/category/'.$child->slug)}}">{{ $child->name }}</a>
+															<li class="dropdown-header" style="padding-left: 5px">
+																<a class="one changeColor" href="{{url('/category/'.$child->slug)}}">{{ $child->name }}</a>
 															</li>
 														@endforeach
 													@endif
@@ -45,3 +45,9 @@
 		</nav>
 	</div>
 </header>
+
+<style>
+.changeColor { color: black }
+.changeColor:hover { color: red; }
+.fontSize { font-size: 16px }
+</style>
