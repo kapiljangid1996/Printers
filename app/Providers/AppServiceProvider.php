@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\Slider;
 use App\Models\Service;
 use App\Models\Blog;
@@ -34,6 +35,13 @@ class AppServiceProvider extends ServiceProvider
         //Category
         $categories = Category::with('children')->whereNull('parent_id')->get();
         View::share('categories', $categories);
+
+        //Products on Index Page
+        View::composer('front.index', function($view)
+        {
+            $products = Product::where('featured',1)->where('status',1)->orderBy('id', 'desc')->get();;
+            $view->with('products', $products);
+        });
         
         //Slider on Index Page
         View::composer('pages.slider', function($view)

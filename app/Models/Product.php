@@ -11,7 +11,7 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $fillable = ['name', 'slug', 'category_id', 'long_description', 'short_description', 'meta_name', 'meta_description', 'meta_keyword', 'sort_order', 'status'];
+    protected $fillable = ['name', 'slug', 'category_id', 'long_description', 'short_description', 'meta_name', 'meta_description', 'meta_keyword', 'sort_order', 'status', 'featured'];
 
     public function category()
     {
@@ -35,6 +35,7 @@ class Product extends Model
             'meta_keyword'  => 'required|min:3',
             'meta_description'  => 'required|min:3',
             'status' => 'boolean',
+            'featured' => 'boolean',
         ]);
         $products = new Product(); 
         $products -> name = request('name');
@@ -46,6 +47,7 @@ class Product extends Model
         $products -> meta_description = request('meta_description');
         $products -> meta_keyword = request('meta_keyword');
         $products -> status = request('status');  
+        $products -> featured = request('featured');  
         $products->save(); 
 
         $lastInsertedId= $products->id;
@@ -78,6 +80,7 @@ class Product extends Model
             'meta_keyword'  => 'required|min:3',
             'meta_description'  => 'required|min:3',
             'status' => 'boolean',
+            'featured' => 'boolean',
         ]);
         $products = Product::find($id);
         $products -> name = $request->input('name');
@@ -89,6 +92,7 @@ class Product extends Model
         $products -> meta_description = $request->input('meta_description');
         $products -> meta_keyword = $request->input('meta_keyword');
         $products -> status = $request->input('status');
+        $products -> featured = $request->input('featured');
         $products->save();
 
         $image=array();

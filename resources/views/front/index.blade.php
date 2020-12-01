@@ -14,6 +14,24 @@
 
 @section('content')
 
+<section class="service_section customPad">
+	<div class="container mt-2">
+		<div class="heading_container">
+			<h2>Feat<span>ured Prod</span>ucts</h2>
+		</div>
+		<div class="row" style="margin-top: 40px">			
+			@foreach($products as $key => $product)
+				<div class="col-md-3 col-sm-6 item">
+					<div class="card item-card card-block">
+						<img src="/Uploads/Product/{{ $product->productimage[0]->image }}" style="height:150px; width:100%;">
+						<h5 class="item-card-title mt-3 mb-3 text-center">{{ $product->name }}</h5>
+					</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
+</section>
+
 <section class="service_section layout_padding">
 	<div class="container">
 		<div class="heading_container">
@@ -48,7 +66,6 @@
 		</div>
 	</div>
 </section>
-
 @stop
 
 <!-- Content End -->

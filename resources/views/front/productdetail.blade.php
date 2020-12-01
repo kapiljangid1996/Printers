@@ -28,8 +28,8 @@
 						@endforeach
 					@endforeach
 				</div>
-				<a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
-				<a class="carousel-control-next" href="#custCarousel" data-slide="next"> <span class="carousel-control-next-icon"></span> </a>
+				<a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> <span class="carousel-control-previous-icon"></span> </a>
+				<a class="carousel-control-next" href="#custCarousel" data-slide="next"> <span class="carousel-control-nextious-icon"></span> </a>
 				<hr>
 				<ol class="carousel-indicators list-inline">
 					<?php $i=0 ?>
@@ -61,4 +61,24 @@
 	</div>
 	<hr class="my-5">
 </div>
+<style>
+.carousel-control-previous-icon,
+.carousel-control-nextious-icon {
+    height: 100px;
+    width: 100px;
+}
+
+.carousel-control-nextious-icon:after
+{
+    content: '>';
+    font-size: 55px;
+    color: blue;
+}
+
+.carousel-control-previous-icon:after {
+    content: '<';
+    font-size: 55px;
+    color: blue;
+}
+</style>
 @stop

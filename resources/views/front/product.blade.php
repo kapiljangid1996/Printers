@@ -3,27 +3,24 @@
 @section('title','Products')
 
 @section('content')
-<section class=" layout_padding-bottom layout_padding2-top">
-	<div class="container">
-		<div class="heading_container" style="margin-bottom: 35px">
+<section class="layout_padding-bottom layout_padding2-top">
+	<div class="container mt-2">
+		<div class="heading_container">
 			<h2>{{$category->name}}</h2><hr>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top: 40px">			
 			@foreach($products as $key => $product)
-				<div class="card booking-card col-md-3" style="padding: 15px; margin: 15px">
-					<div class="view overlay">
-						<a href="{{url('/products/'.$product->slug)}}" class="btn-img btn-img-gradient">
-							<img class="card-img-top" src="/Uploads/Product/{{ $product->productimage[0]->image }}" alt="">
-							<div class="mask rgba-white-slight"></div>
+				<div class="col-md-3 col-sm-6 item">
+					<div class="card item-card card-block">
+						<a href="{{url('/products/'.$product->slug)}}" style="color: black !important">
+							<img src="/Uploads/Product/{{ $product->productimage[0]->image }}" style="height:150px; width:100%;">						
+							<h5 class="item-card-title mt-3 mb-3 text-center font-weight-bold">{{ $product->name }}</h5>
+							<p class="card-text text-center mb-2">{{ $product->category->name }}</p>
 						</a>
-					</div>
-					<div class="card-body">
-						<h4 class="card-title font-weight-bold"><a>{{ $product->name }}</a></h4>
-						<p class="mb-2">{{ $product->category->name }}</p>
 					</div>
 				</div>
 			@endforeach
-		</div>			
+		</div>
 	</div>
 </section>
 @stop

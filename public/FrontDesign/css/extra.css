@@ -193,25 +193,93 @@ a.one:hover {color:#ff0000;}
     width: 80%
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    height: 100px;
-    width: 100px;
-}
-
-.carousel-control-next-icon:after
-{
-    content: '>';
-    font-size: 55px;
-    color: blue;
-}
-
-.carousel-control-prev-icon:after {
-    content: '<';
-    font-size: 55px;
-    color: blue;
-}
-
 .owl-wrapper-outer {
     border: 1px solid black;
+}
+
+.custom-badge {
+    background-color: #343a40 !important;
+    color: #fff;
+    font-size: 11px;
+}
+
+.card {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 260px;
+    height: 280px
+}
+
+.customChange{
+  border: 1px solid #cea7e8;
+  border-radius: 25px;
+  margin: 10px;
+  margin-left: 55px;
+  padding: 10px
+}
+
+.customPad{
+  padding-top: 110px;
+  padding-bottom: 35px;
+}
+
+  img{
+  
+}
+
+.item{
+  padding-left:5px;
+  padding-right:5px;
+
+}
+.item-card{
+  transition:0.5s;
+  cursor:pointer;
+  border: 1px solid #cea7e8;
+}
+.item-card-title{  
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+}
+.item-card-title i{  
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+  color:#ffa710
+}
+.card-title i:hover{
+  transform: scale(1.25) rotate(100deg); 
+  color:#18d4ca;
+  
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+.card-text{
+  height:80px;  
+}
+
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
 }

@@ -46,6 +46,7 @@
 							<th>Name</th>
 							<th>Category</th>
 							<th>Slug</th>
+							<th>Featured</th>
 							<th>Status</th>
 							<th>Action</th>
 						</tr>
@@ -61,6 +62,13 @@
 							<td>{{ $product->name }}</td>
 							<td>{{ $product->category->name}}</td>
 							<td>{{ $product->slug }}</td>
+							<td>
+								@if($product->featured == 1)
+                                  	Yes
+                              	@else
+                                  	No
+                              	@endif
+							</td>
 							<td>
 								@if($product->status == 1)
                                   	Active

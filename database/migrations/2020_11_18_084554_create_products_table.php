@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('meta_description');
             $table->string('sort_order')->nullable();
             $table->boolean('status')->default(0);
+            $table->boolean('featured')->default(0);
             $table->timestamps();
         });
     }

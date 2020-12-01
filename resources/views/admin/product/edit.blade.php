@@ -123,6 +123,13 @@
 						</div>
 					</div>
 					<div class="form-group row">
+						<label for="slug" class="col-sm-2 col-form-label">Featured</label>
+						<div class="col-sm-10">
+							<input type="hidden" name="featured" value="0">
+							<input type="checkbox" name="featured" value="1" style="margin-top: 7px" @if(old('featured', $products->featured)) checked @endif>
+						</div>
+					</div>
+					<div class="form-group row">
 						<label for="slug" class="col-sm-2 col-form-label">Status</label>
 						<div class="col-sm-10">
 							<input type="hidden" name="status" value="0">
