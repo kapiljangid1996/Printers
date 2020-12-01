@@ -21,10 +21,12 @@
 		</div>
 		<div class="row" style="margin-top: 40px">			
 			@foreach($products as $key => $product)
-				<div class="col-md-3 col-sm-6 item">
+				<div class="col-md-3 col-sm-6 item" style="margin-bottom: 15px">
 					<div class="card item-card card-block">
-						<img src="/Uploads/Product/{{ $product->productimage[0]->image }}" style="height:150px; width:100%;">
-						<h5 class="item-card-title mt-3 mb-3 text-center">{{ $product->name }}</h5>
+						<a href="{{url('/products/'.$product->slug)}}" style="color: black !important">
+							<img src="/Uploads/Product/{{ $product->productimage[0]->image }}" style="height:150px; width:100%;">
+							<h5 class="item-card-title mt-3 mb-3 text-center font-weight-bold">{{ $product->name }}</h5>
+						</a>
 					</div>
 				</div>
 			@endforeach

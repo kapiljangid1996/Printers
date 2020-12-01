@@ -61,24 +61,4 @@
 	</div>
 	<hr class="my-5">
 </div>
-<style>
-.carousel-control-previous-icon,
-.carousel-control-nextious-icon {
-    height: 100px;
-    width: 100px;
-}
-
-.carousel-control-nextious-icon:after
-{
-    content: '>';
-    font-size: 55px;
-    color: blue;
-}
-
-.carousel-control-previous-icon:after {
-    content: '<';
-    font-size: 55px;
-    color: blue;
-}
-</style>
 @stop
