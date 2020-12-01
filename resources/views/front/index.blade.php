@@ -25,7 +25,7 @@
 					<?php $i=1; ?>
 					@foreach($services as $key => $service)
 						<div class="img-box tab-pane fade {{$key == 0 ? 'show active' : '' }}" id="img<?php echo $i ?>" role="tabpanel">
-							<img src="/Uploads/Service/{{ $service->image }}" alt="" />
+							<img src="/Uploads/Service/{{ $service->image }}" alt="" height="450px">
 						</div>					
 					<?php $i++; ?>
 					@endforeach
@@ -36,7 +36,7 @@
 					<?php $i=1; ?>
 					@foreach($services as $key => $service)
 						<div class="detail-box {{$key == 0 ? 'active' : '' }}" id="img<?php echo $i ?>-tab" data-toggle="tab" href="#img<?php echo $i ?>" role="tab" aria-selected="{{$key == 0 ? 'true' : 'false' }}">
-							<h4>{{ $service->title }}</h4>
+							<h5>{{ $service->title }}</h5>
 						</div>
 					<?php $i++; ?>
 					@endforeach

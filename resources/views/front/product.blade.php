@@ -12,7 +12,7 @@
 			@foreach($products as $key => $product)
 				<div class="card booking-card col-md-3" style="padding: 15px; margin: 15px">
 					<div class="view overlay">
-						<a href="{{url('/products/'.$product->slug)}}">
+						<a href="{{url('/products/'.$product->slug)}}" class="btn-img btn-img-gradient">
 							<img class="card-img-top" src="/Uploads/Product/{{ $product->productimage[0]->image }}" alt="">
 							<div class="mask rgba-white-slight"></div>
 						</a>

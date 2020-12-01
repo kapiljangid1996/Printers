@@ -34,23 +34,23 @@ class Setting extends Model
             'meta_keyword'  => 'required|min:3',
             'google_analyst'  => 'required|min:3',
         ]);
-        $settings = Setting::find($id);
-        $settings -> title = $request->input('title');
-        $settings -> email1 = $request->input('email1');
-        $settings -> email2 = $request->input('email2');
-        $settings -> contact1 = $request->input('contact1');
-        $settings -> contact2 = $request->input('contact2');
-        $settings -> address1 = $request->input('address1');
-        $settings -> address2 = $request->input('address2');
-        $settings -> google = $request->input('google');
-        $settings -> facebook = $request->input('facebook');
-        $settings -> linkedin = $request->input('linkedin');
-        $settings -> twitter = $request->input('twitter');
-        $settings -> footer = $request->input('footer');
-        $settings -> meta_name = $request->input('meta_name');
-        $settings -> meta_description = $request->input('meta_description');
-        $settings -> meta_keyword = $request->input('meta_keyword');
-        $settings -> google_analyst = $request->input('google_analyst');
+        $setting = Setting::find($id);
+        $setting -> title = $request->input('title');
+        $setting -> email1 = $request->input('email1');
+        $setting -> email2 = $request->input('email2');
+        $setting -> contact1 = $request->input('contact1');
+        $setting -> contact2 = $request->input('contact2');
+        $setting -> address1 = $request->input('address1');
+        $setting -> address2 = $request->input('address2');
+        $setting -> google = $request->input('google');
+        $setting -> facebook = $request->input('facebook');
+        $setting -> linkedin = $request->input('linkedin');
+        $setting -> twitter = $request->input('twitter');
+        $setting -> footer = $request->input('footer');
+        $setting -> meta_name = $request->input('meta_name');
+        $setting -> meta_description = $request->input('meta_description');
+        $setting -> meta_keyword = $request->input('meta_keyword');
+        $setting -> google_analyst = $request->input('google_analyst');
         $old_logo = $request->input('old_logo');
         if ($request->hasfile('logo'))
         {
@@ -61,8 +61,8 @@ class Setting extends Model
             $title = $request->get('title');
             $imageName =$title.'-'.request()->logo->getClientOriginalName();
             request()->logo->move(public_path('Uploads/Site'), $imageName); 
-            $settings->logo = $imageName;
+            $setting->logo = $imageName;
         }
-        $settings->save();
+        $setting->save();
     }
 }

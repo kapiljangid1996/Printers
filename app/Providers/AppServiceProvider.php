@@ -43,13 +43,16 @@ class AppServiceProvider extends ServiceProvider
         });
 
         //Service on Index Page
-        $services = Service::all();
-        View::share('services', $services);
+        View::composer('front.index', function($view)
+        {
+            $services = Service::where('status',1)->orderBy('id', 'desc')->take(4)->get();
+            $view->with('services', $services);
+        });
 
         //Blogs on Blog Page
         View::composer('front.blog', function($view)
         {
-            $blogs = Blog::all();
+            $blogs = Blog::where('status',1)->get();
             $view->with('blogs', $blogs);
         });
 

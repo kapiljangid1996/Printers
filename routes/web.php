@@ -72,7 +72,10 @@ Route::prefix('admin')->group(function (){
 	Route::resource('service', App\Http\Controllers\Admin\ServicesController::class);			
 
 	//Blogs
-	Route::resource('blog', App\Http\Controllers\Admin\BlogsController::class);		
+	Route::resource('blog', App\Http\Controllers\Admin\BlogsController::class);				
+
+	//Pages
+	Route::resource('page', App\Http\Controllers\Admin\PagesController::class);		
 
 	//Site Setting
 	Route::get('/setting', [App\Http\Controllers\Admin\SettingsController::class, 'index']);	

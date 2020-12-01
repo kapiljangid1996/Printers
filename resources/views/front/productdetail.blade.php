@@ -13,7 +13,7 @@
 	@foreach($products as $product)
 		<h3>{{ $product->name }}</h3>
 	@endforeach
-	<hr class="my-5">
+	<hr class="my-4">
 	<div class="row">
 		<div class="col-md-5">
 			<div id="custCarousel" class="carousel slide" data-ride="carousel" align="center">
@@ -30,13 +30,14 @@
 				</div>
 				<a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
 				<a class="carousel-control-next" href="#custCarousel" data-slide="next"> <span class="carousel-control-next-icon"></span> </a>
+				<hr>
 				<ol class="carousel-indicators list-inline">
 					<?php $i=0 ?>
 					@foreach($products as $product)
 						@foreach($product->productimage as $key => $proimage)
 							<li class="list-inline-item {{$key == 0 ? 'active' : '' }}">
 								<a id="carousel-selector-<?php echo $i ?>" class="{{$key == 0 ? 'selected' : '' }}" data-slide-to="<?php echo $i ?>" data-target="#custCarousel">
-									<img src="/Uploads/Product/{{ $proimage->image }}" class="img-fluid">
+									<img src="/Uploads/Product/{{ $proimage->image }}" class="img-fluid owl-wrapper-outer">
 								</a>
 							</li>
 						<?php $i++ ?>
@@ -60,36 +61,4 @@
 	</div>
 	<hr class="my-5">
 </div>
-<style>
-.carousel-inner img {
-    width: 100%;
-    height: 100%
-}
-
-#custCarousel .carousel-indicators {
-    position: static;
-    margin-top: 20px
-}
-
-#custCarousel .carousel-indicators>li {
-    width: 100px
-}
-
-#custCarousel .carousel-indicators li img {
-    display: block;
-    opacity: 0.5
-}
-
-#custCarousel .carousel-indicators li.active img {
-    opacity: 1
-}
-
-#custCarousel .carousel-indicators li:hover img {
-    opacity: 0.75
-}
-
-.carousel-item img {
-    width: 80%
-}
-</style>
 @stop

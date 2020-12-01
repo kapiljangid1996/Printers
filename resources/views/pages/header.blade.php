@@ -9,27 +9,28 @@
 				<div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
 					<ul class="navbar-nav">
 						<li class="nav-item active"><a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a></li>
-						<li class="nav-item dropdown mega-dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class=""></i></a>
-							<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-1 px-1" aria-labelledby="navbarDropdownMenuLink2">
-								<div class="row">
-									@foreach ($categories as $category)
-									<div class="col-md-12 col-xl-3 sub-menu" style="padding: 10px; width: 800px">
-										<ul class="list-unstyled">
-											<li><a class="dropdown-item noHover">{{$category->name}}</a></li>
-											<div class="dropdown-divider"></div>
-											@if($category->children)
-												@foreach ($category->children as $child)
-													<li>
-														<a class="dropdown-item one" style="text-transform: uppercase;" href="{{url('/category/'.$child->slug)}}">{{ $child->name }}</a>
-													</li>
-												@endforeach
-											@endif
-										</ul>
+						<li class="dropdown menu-large nav-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> Product Listing </a>
+							<ul class="dropdown-menu megamenu">
+								<li class="dropdown-item noHover">
+									<div class="row">
+										@foreach ($categories as $key => $category)
+											<div class="col-md-12 col-lg-3 {{$key == 3 ? 'styleMargin' : '' }}">
+												<ul class="{{$key == 3 ? 'styleMargin' : '' }}">
+													<li class="dropdown-header">{{$category->name}}</li>
+													@if($category->children)
+														@foreach ($category->children as $child)
+															<li class="dropdown-header">
+																<a class="one" href="{{url('/category/'.$child->slug)}}">{{ $child->name }}</a>
+															</li>
+														@endforeach
+													@endif
+												</ul>
+											</div>
+										@endforeach
 									</div>
-									@endforeach
-								</div>
-							</div>
+								</li>
+							</ul>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="{{url('/about')}}">About</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{url('/service')}}">Service</a></li>
@@ -44,10 +45,3 @@
 		</nav>
 	</div>
 </header>
-
-<style>
-	.noHover{
-    	pointer-events: none;
-	}
-	a.one:hover {color:#ff0000; background-color: white}
-</style>

@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function product($slug)
     {
         $category = Category::where('slug', $slug)->pluck('id');
-        $products = Product::with('category')->with('productimage')->where('category_id',$category)->get();
+        $products = Product::with('category')->with('productimage')->where('category_id',$category)->where('status', 1)->get();
         $category = Category::where('slug', $slug)->first();
         return view('front.product')->with('products',$products)->with('category',$category);
     }
@@ -33,7 +33,8 @@ class HomeController extends Controller
 
     public function service()
     {
-        return view('front.service');
+        $services = Service::where('status', 1)->get();
+        return view('front.service')->with('services',$services);
     }
 
     public function serviceDetails($slug)

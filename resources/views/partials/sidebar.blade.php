@@ -53,6 +53,12 @@
 				</a>
 			</li>
 			<li class="nav-item w-100">
+				<a class="nav-link" href="{{url('/admin/page')}}">
+					<i class="fe fe-file-plus fe-16"></i>
+					<span class="ml-3 item-text">Pages</span>
+				</a>
+			</li>
+			<li class="nav-item w-100">
 				<a class="nav-link" href="{{url('/admin/setting')}}">
 					<i class="fe fe-settings fe-16"></i>
 					<span class="ml-3 item-text">Settings</span>

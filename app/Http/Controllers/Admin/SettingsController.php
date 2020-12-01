@@ -15,13 +15,13 @@ class SettingsController extends Controller
 
     public function index()
     {
-    	$settings = Setting::get();
-        return view('admin.setting.index')->with('settings',$settings);
+    	$setting = Setting::get();
+        return view('admin.setting.index')->with('setting',$setting);
     }
 
     public function update(Request $request, $id)
     {   
-        $settings = Setting::editSetting($request,$id);
+        $setting = Setting::editSetting($request,$id);
         return \Redirect::to('admin/setting')->with('success', 'Setting Updated Successfully.');
     }
 }
